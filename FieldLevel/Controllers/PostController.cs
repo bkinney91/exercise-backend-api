@@ -38,7 +38,7 @@ namespace FieldLevel.Controllers
                 Log.Error(httpEx, "Data source was unable to be reached.");
                 throw;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Log.Error(ex, $"Error geting latest post for each user.");
                 throw;

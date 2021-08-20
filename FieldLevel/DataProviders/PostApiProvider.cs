@@ -1,5 +1,6 @@
 ﻿using FieldLevel.DataProviders.Interfaces;
 using FieldLevel.Models.Entity;
+using FieldLevel.Properties;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace FieldLevel.DataProviders
         /// <returns></returns>
         public async Task<List<Post>> GetPosts()
         {
-            HttpClient postClient = HttpClientFactory.CreateClient("postClient");
+            HttpClient postClient = HttpClientFactory.CreateClient(ApplicationResources.PostClient);
             var url = new Uri(postClient.BaseAddress.ToString());
             HttpResponseMessage postResponse = await postClient.GetAsync(url);
             postResponse.EnsureSuccessStatusCode(); //Throws if not 200

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AspNetCoreRateLimit;
 using FieldLevel.DataProviders;
 using FieldLevel.DataProviders.Interfaces;
+using FieldLevel.Properties;
 using FieldLevel.Services;
 using FieldLevel.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -54,9 +55,9 @@ namespace FieldLevel
                 Log.Information("Using environment \"Production\"");
                 services.AddScoped<IPostProvider, PostApiProvider>();
                 //Http Client
-                services.AddHttpClient("postClient", c =>
+                services.AddHttpClient(ApplicationResources.PostClient, c =>
                 {
-                    c.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/posts");
+                    c.BaseAddress = new Uri(ApplicationResources.PostApiUrl);
                 });
             }
             else //all other environments use static posts.json file
