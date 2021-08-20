@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FieldLevel.Properties
+﻿namespace FieldLevel.Properties
 {
     public static class ApplicationResources
     {

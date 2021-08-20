@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using AspNetCoreRateLimit;
 using FieldLevel.DataProviders;
 using FieldLevel.DataProviders.Interfaces;
@@ -8,7 +7,6 @@ using FieldLevel.Services;
 using FieldLevel.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

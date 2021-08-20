@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FieldLevel.Models.Contract
+﻿namespace FieldLevel.Models.Contract
 {
     public class PostDto
     {
