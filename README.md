@@ -24,8 +24,11 @@ This project is about exposing a single web api endpoint that returns the most r
 
 
 # How To Run
-
-{Provide any details FieldLevel should know to get this running}
+Using VS:
+    Run the solution using "IIS Express Production" for the app to connect to the data source provided
+Using CLI
+    Open a terminal at the FieldLevel.csproj directory and run "dotnet run"
+    Open a browser and navigate to https://localhost:5001/swagger/index.html
 
 # Deployment
 This will be auto deployed to an azure site
