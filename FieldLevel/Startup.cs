@@ -29,6 +29,7 @@ namespace FieldLevel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {          
+            //Configuration for ASPNETCORERateLimit
             services.AddOptions();
             services.AddMemoryCache();
             services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimit"));
@@ -39,8 +40,9 @@ namespace FieldLevel
             services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
             services.AddHttpContextAccessor();
 
-            //Dependency Injection
+            //Dependency Injection for the domain service and provider
             services.AddScoped<IPostService, PostService>();
+            //If production use the live data source
             if(WebHostEnvironment.IsProduction())
             {
                 services.AddScoped<IPostProvider, PostApiProvider>();
@@ -50,11 +52,10 @@ namespace FieldLevel
                     c.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/posts");
                 });
             }
-            else
+            else //all other environments use static posts.json file
             {
                 services.AddScoped<IPostProvider, PostFileProvider>();
-            }
-           
+            }           
           
             services.AddControllers();
             services.AddSwaggerGen(c =>

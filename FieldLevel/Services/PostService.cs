@@ -20,7 +20,7 @@ namespace FieldLevel.Services
         }
 
         /// <summary>
-        /// Retrieves the latest posts from the data source and
+        /// Retrieves the all posts from the data source and
         /// sorts them to only retain the latest post for each user.
         /// </summary>
         /// <returns></returns>

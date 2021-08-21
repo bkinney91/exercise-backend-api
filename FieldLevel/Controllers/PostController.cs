@@ -20,6 +20,10 @@ namespace FieldLevel.Controllers
             this.PostService = postService;
         }
 
+        /// <summary>
+        /// Returns a list of PostDtos that are the latest post (based on post.id) for each user
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetLatestPostForEachUser")]
         public async Task<IActionResult> GetLatestPostForEachUser()

@@ -25,8 +25,7 @@ namespace FieldLevel
                 })
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {                   
-                    config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-                    
+                    config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);                    
                 });
     }
 }

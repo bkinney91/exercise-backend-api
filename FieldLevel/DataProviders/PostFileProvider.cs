@@ -16,7 +16,7 @@ namespace FieldLevel.DataProviders
         }
 
         /// <summary>
-        /// Uses an Http client to get the JSON payload
+        /// Reads JSON sample file from posts.json in the root directory
         /// </summary>
         /// <returns></returns>
         public async Task<List<Post>> GetPosts()
