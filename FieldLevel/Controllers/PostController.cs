@@ -22,7 +22,7 @@ namespace FieldLevel.Controllers
 
         [HttpGet]
         [Route("GetLatestPostForEachUser")]
-        public async Task<IActionResult> GetLatestPostForEachUser(int id)
+        public async Task<IActionResult> GetLatestPostForEachUser()
         {
             try
             {
