@@ -1,5 +1,4 @@
 using System;
-using AspNetCoreRateLimit;
 using FieldLevel.DataProviders;
 using FieldLevel.DataProviders.Interfaces;
 using FieldLevel.Properties;
@@ -28,17 +27,8 @@ namespace FieldLevel
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
-
-            //Configuration for ASPNETCORERateLimit
             services.AddOptions();
-            services.AddMemoryCache();
-            services.Configure<IpRateLimitOptions>(Configuration.GetSection("IpRateLimit"));
-            // inject counter and rules stores
-            services.AddInMemoryRateLimiting();
-            services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
-            services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
-            services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+            services.AddMemoryCache();          
             services.AddHttpContextAccessor();
 
             //Dependency Injection for the domain service and provider
@@ -76,7 +66,6 @@ namespace FieldLevel
                 app.UseDeveloperExceptionPage();
                 
             }
-            app.UseIpRateLimiting();
 
             app.UseSwagger();
             
